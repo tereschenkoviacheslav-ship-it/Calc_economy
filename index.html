@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Калькулятор стоимости привычки</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Калькулятор стоимости привычки</h1>
+  </header>
+
+  <main class="container">
+    <section class="calculator">
+      <form id="habitForm">
+        <div class="form-group">
+          <label for="habitName">Привычка (например, «кофе каждый день»)</label>
+          <input type="text" id="habitName" placeholder="Название привычки" />
+        </div>
+
+        <div class="form-group">
+          <label for="costPerDay">Стоимость в день, ₽</label>
+          <!-- type="text", чтобы можно было вводить буквы для теста -->
+          <input type="text" id="costPerDay" placeholder="Например, 200" />
+        </div>
+
+        <button type="submit" id="calculateBtn">Рассчитать</button>
+      </form>
+
+      <div id="errorContainer" class="error"></div>
+
+      <section id="results" class="results hidden">
+        <h2>Результаты</h2>
+        <ul class="stats">
+          <li>За 1 год: <span id="resultYear"></span></li>
+          <li>За 5 лет: <span id="result5Years"></span></li>
+          <li>За 10 лет: <span id="result10Years"></span></li>
+        </ul>
+        <p id="alternativeText" class="alternative"></p>
+      </section>
+    </section>
+
+    <aside class="journal-section">
+      <h2>Журнал запросов</h2>
+      <button id="clearJournalBtn">Очистить журнал</button>
+      <ul id="journalList" class="journal"></ul>
+    </aside>
+  </main>
+
+  <footer>
+    <p>&copy; Калькулятор стоимости привычки. Сохраняет историю в localStorage.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
